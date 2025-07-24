@@ -7,23 +7,31 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div id="login-section">
-    <h2>Login</h2>
-    <input type="text" id="username" placeholder="Username" />
-    <input type="password" id="password" placeholder="Password" />
+  <!-- Auth Section -->
+  <div id="auth-section">
+    <h2>Login / Sign Up</h2>
+    <input type="text" id="auth-username" placeholder="Username" />
+    <input type="password" id="auth-password" placeholder="Password" />
     <button onclick="login()">Login</button>
+    <button onclick="signup()">Sign Up</button>
   </div>
 
+  <!-- Dashboard -->
   <div id="dashboard" style="display:none;">
     <h2>Dashboard</h2>
-    <button onclick="showPatientSection()">Manage Patients</button>
-    <button onclick="startGaitSession()">Start Gait Session</button>
-    <button onclick="exportData()">Export Report</button>
-    <div id="output"></div>
+    <button onclick="showAddPatient()">➕ Add Patient</button>
+    <button onclick="startSession()">▶️ Start Gait Session</button>
+    <button onclick="exportReport()">📤 Export Report</button>
+    <button onclick="logout()">🔓 Logout</button>
+
+    <hr/>
+    <div id="patient-section"></div>
     <canvas id="graph" width="400" height="200"></canvas>
+    <pre id="report-output"></pre>
   </div>
 
-  <script src="gait-data.js"></script>
+  <script src="auth.js"></script>
+  <script src="gait-utils.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
