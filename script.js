@@ -1,21 +1,29 @@
-function addTask() {
-  const input = document.getElementById("taskInput");
-  const taskText = input.value.trim();
-
-  if (taskText === "") {
-    alert("Please enter a task!");
-    return;
+// Dummy login
+function login() {
+  const username = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
+  if (username === "admin" && password === "admin") {
+    document.getElementById("login-section").style.display = "none";
+    document.getElementById("dashboard").style.display = "block";
+  } else {
+    alert("Invalid login");
   }
+}
 
-  const list = document.getElementById("taskList");
-  const item = document.createElement("li");
-  item.textContent = taskText;
+// Placeholder for patient section
+function showPatientSection() {
+  document.getElementById("output").innerText = "Patient management coming soon...";
+}
 
-  // Toggle task done/undone
-  item.addEventListener("click", function () {
-    item.classList.toggle("done");
-  });
+// Simulate gait data collection
+function startGaitSession() {
+  document.getElementById("output").innerText = "Collecting gait data...";
 
-  list.appendChild(item);
-  input.value = ""; // Clear input
+  let data = generateSampleGaitData(50);
+  drawGraph(data);
+}
+
+// Export placeholder
+function exportData() {
+  alert("Export feature coming soon...");
 }
